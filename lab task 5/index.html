@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>City Gym Membership</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>City Gym Membership</h1>
+    </header>
+
+    <h2>Membership Fee List</h2>
+
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Fee (Taka)</th>
+        </tr>
+        <tr>
+            <td>Monthly Plan</td>
+            <td>1500</td>
+        </tr>
+        <tr>
+            <td>Quarterly Plan</td>
+            <td>4000</td>
+        </tr>
+        <tr>
+            <td>Yearly Plan</td>
+            <td>14000</td>
+        </tr>
+        <tr>
+            <td>Family Add-on (each)</td>
+            <td>500</td>
+        </tr>
+    </table>
+
+    <h2>Membership Registration Form</h2>
+
+    <form id="gymForm" onsubmit="return validateForm()" novalidate>
+
+        <div class="form-section">
+
+            <h3>Personal Details</h3>
+
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName">
+            <div class="error" id="nameError"></div>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age">
+            <div class="error" id="ageError"></div>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile">
+            <div class="error" id="mobileError"></div>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+            <div class="error" id="emailError"></div>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+            <div class="error" id="passwordError"></div>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword">
+            <div class="error" id="confirmPasswordError"></div>
+
+        </div>
+
+        <div class="form-section">
+
+            <h3>Membership Plan</h3>
+
+            <label for="plan">Select Plan:</label>
+            <select id="plan">
+                <option value="">Select Plan</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Quarterly">Quarterly</option>
+                <option value="Yearly">Yearly</option>
+            </select>
+            <div class="error" id="planError"></div>
+
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate">
+            <div class="error" id="dateError"></div>
+
+            <label>Workout Time:</label>
+
+            <div class="radio-group">
+                <input type="radio" id="morning" name="workoutTime" value="Morning">
+                <label for="morning">Morning</label>
+
+                <input type="radio" id="afternoon" name="workoutTime" value="Afternoon">
+                <label for="afternoon">Afternoon</label>
+
+                <input type="radio" id="evening" name="workoutTime" value="Evening">
+                <label for="evening">Evening</label>
+            </div>
+
+            <div class="error" id="timeError"></div>
+
+            <div class="trainer-container">
+
+                <div>
+                    <label for="mainTrainer">Main Trainer:</label>
+                    <select id="mainTrainer">
+                        <option value="">Select Trainer</option>
+                        <option value="Rafi">Rafi</option>
+                        <option value="Mitu">Mitu</option>
+                        <option value="Sabbir">Sabbir</option>
+                        <option value="Joya">Joya</option>
+                    </select>
+                    <div class="error" id="mainTrainerError"></div>
+                </div>
+
+                <div>
+                    <label for="backupTrainer">Backup Trainer:</label>
+                    <select id="backupTrainer">
+                        <option value="">Select Trainer</option>
+                        <option value="Rafi">Rafi</option>
+                        <option value="Mitu">Mitu</option>
+                        <option value="Sabbir">Sabbir</option>
+                        <option value="Joya">Joya</option>
+                    </select>
+                    <div class="error" id="backupTrainerError"></div>
+                </div>
+
+            </div>
+
+            <label for="addons">Family Add-ons:</label>
+            <input type="number" id="addons" min="0" max="3">
+            <div class="error" id="addonsError"></div>
+
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="medicalCheck" onchange="toggleJoinButton()">
+            <label for="medicalCheck">I am medically fit to exercise and I accept the gym rules.</label>
+        </div>
+
+        <button type="submit" id="joinButton" disabled>Join Now</button>
+
+        <div id="finalMessage"></div>
+
+    </form>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
